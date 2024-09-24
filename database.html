@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="database.css">
+    <title>Medicinal Plants Database</title>
+</head>
+<body>
+    <div class="topnav">
+        <a class="active" href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+        <input type="text" placeholder="Search">
+    </div>
+
+    <div class="container">
+        <!-- Individual Plant Section -->
+        <div class="individualPlant">
+            <div class="image">
+                <img src="aegleMarmelos.jpg" alt="Aegle Marmelos" onclick="openModal(this)" class="plant-img">
+                <img src="aegleMarmelos2.jpg" alt="Aegle Marmelos Close Up" onclick="openModal(this)" class="plant-img">
+            </div>
+            <h1><u>Aegle Marmelos</u></h1>
+            <p><b>Scientific Name:</b> Aegle marmelos</p>
+            <p><b>Common Names:</b> Bael, Bengal Quince, Holy Fruit</p>
+            <p><b>Native Region:</b> India, Sri Lanka, and parts of Southeast Asia.</p>
+            <p>Aegle marmelos, commonly known as bael, is a tropical and subtropical fruit-bearing tree...</p>
+            <h2>Uses in AYUSH:</h2>
+            <p><b>• Digestive Health</b></p>
+            <p><b>• Respiratory Health</b></p>
+            <p><b>• Immune Support</b></p>
+            <h2>Advantages:</h2>
+            <p><b>• Digestive Benefits:</b> Effective in managing digestive issues...</p>
+            <h2>Disadvantages and Side Effects:</h2>
+            <p><b>• Gastrointestinal Irritation:</b> In some individuals, excessive consumption...</p>
+        </div>
+
+        <!-- Repeat for other plants -->
+        <div class="individualPlant">
+            <div class="image">
+                <img src="aloeVera1.jpg" alt="Aloe Vera" onclick="openModal(this)" class="plant-img">
+                <img src="aloeVera2.jpg" alt="Aloe Vera Close Up" onclick="openModal(this)" class="plant-img">
+            </div>
+            <h1><u>Aloe Vera</u></h1>
+            <p>Aloe Vera is a medicinal plant that grows in hot climates...</p>
+            <h2>Aloe Vera Benefits</h2>
+            <p>Aloe vera comes as a gel that you can apply to your skin...</p>
+            <h2>Aloe Vera Risks</h2>
+            <p>Talk to your doctor before using aloe vera...</p>
+        </div>
+
+        <div class="individualPlant">
+            <div class="image">
+                <img src="ashwagandhaPlant1.jpg" alt="Ashwagandha Plant" onclick="openModal(this)" class="plant-img">
+                <img src="ashwagandhaPlant2.jpg" alt="Ashwagandha Close Up" onclick="openModal(this)" class="plant-img">
+            </div>
+            <h1><u>Ashwagandha Plant</u></h1>
+            <p><b>Scientific Name:</b> Withania somnifera</p>
+            <p>Ashwagandha is a prominent herb in Ayurvedic medicine known for its adaptogenic properties...</p>
+            <h2>Uses in AYUSH:</h2>
+            <p><b>• Stress and Anxiety</b></p>
+            <h2>Advantages</h2>
+            <p><b>Adaptogenic Effects:</b> Helps the body adapt to stress...</p>
+        </div>
+    </div>
+
+    <!-- Modal for Image Viewing -->
+    <div id="imageModal" class="modal">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <img class="modal-content" id="modalImage">
+        <div id="caption"></div>
+    </div>
+
+    <script>
+        function openModal(imgElement) {
+            const modal = document.getElementById("imageModal");
+            const modalImg = document.getElementById("modalImage");
+            const captionText = document.getElementById("caption");
+
+            modal.style.display = "block";
+            modalImg.src = imgElement.src;
+            captionText.innerHTML = imgElement.alt;
+        }
+
+        function closeModal() {
+            const modal = document.getElementById("imageModal");
+            modal.style.display = "none";
+        }
+    </script>
+</body>
+</html>
