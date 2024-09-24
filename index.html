@@ -7,7 +7,7 @@
   <style>
     /* Nature-inspired color scheme */
     body {
-      background-image: url('nature-background.jpg'); /* Replace with a nature-themed image */
+      background-image: url('Design.jpg'); /* Replace with a nature-themed image */
       background-size: cover;
       background-position: center;
       margin: 0;
@@ -222,7 +222,7 @@
 
   <!-- Top Navigation Bar -->
   <div class="topnav">
-    <a class="active" href="v3.html">Home</a>
+    <a class="active" href="index_.html">Home</a>
     <a href="#about">About</a>
     <a href="#contact">Contact</a>
     <input type="text" placeholder="Search">
@@ -232,23 +232,25 @@
   <div class="container bg">
     <h1><u>VIRTUAL AYUSH GARDEN: A JOURNEY THROUGH MEDICINAL PLANTS</u></h1>
 
+    <!-- Image Section -->
     <div class="images">
       <div class="imageText">
-        <a href="database.html">
-          <img src="design1.jpeg" alt="medicine remedies">
+        <!-- Image placeholder: replace 'file-anuN0cfHg9eM2UcWNSkQ5D7I' with your actual image path -->
+        <a href="index_.html">
+          <img src="path/to/image1.png" alt="medicine remedies">
         </a>
         <p>Medicine Remedies</p>
       </div>
 
       <div class="imageText">
-        <img src="design2.jpeg" alt="product">
+        <img src="path/to/image2.png" alt="product">
         <p>Products</p>
       </div>  
     </div>
 
     <!-- 3D Sample Link Section -->
     <div class="threeD-link">
-      <a href="3DMonstera.html">
+      <a href="3dindex.html">
         <img src="3Dicon.png" alt="3D Sample">
       </a>
       <p>Click here to view the 3D sample</p>
@@ -260,9 +262,29 @@
     <spline-viewer url="https://prod.spline.design/3DMonstera-url/scene.splinecode"></spline-viewer>
   </div>
 
-  <a class="back-button" href="v3.html">Back to Garden</a>
+  <a class="back-button" href="index_.html">Back to Garden</a>
 
   <script src="https://widget.cxgenie.ai/widget.js" data-aid="16030be2-8a8a-4531-9b27-9567baa24781" data-lang="en"></script>
+
+  <div class="black-space">
+    <!-- Main Section (Black Space with Image Gallery) -->
+    <div class="main-section">
+      <div class="image-gallery">
+        <!-- Add images that will open in the modal -->
+        <img src="design1.jpg" alt="Image 1" class="gallery-image" onclick="openModal(this)">
+        <img src="design2.jpg" alt="Image 2" class="gallery-image" onclick="openModal(this)">
+        <img src="chatbot.jpg" alt="Image 3" class="gallery-image" onclick="openModal(this)">
+      </div>
+    </div>
+  
+    <!-- Modal to display full-size image -->
+    <div id="imageModal" class="modal">
+      <span class="close" onclick="closeModal()">&times;</span>
+      <img class="modal-content" id="modalImage">
+      <div id="caption"></div>
+    </div>
+  </div>
+  
 
 </body>
 </html>
