@@ -3,117 +3,119 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="database.css">
     <title>Medicinal Plants Database</title>
     <style>
-        /* General Styles */
+        /* General Styling */
         body {
             font-family: 'Arial', sans-serif;
-            background-color: #f0f8ff;
+            background-color: #f0f4f7;
+            color: #333;
             margin: 0;
             padding: 0;
-            color: #333;
         }
 
-        /* Top Navigation Bar */
         .topnav {
-            background-color: #2d6a4f;
+            background-color: #006d77;
             overflow: hidden;
-            padding: 15px;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
 
         .topnav a {
-            float: left;
-            color: #f4f4f4;
-            text-align: center;
-            padding: 14px 16px;
+            color: #fff;
             text-decoration: none;
-            font-size: 17px;
+            padding: 14px 16px;
+            text-align: center;
+            font-size: 16px;
+            transition: background-color 0.3s;
         }
 
         .topnav a:hover {
-            background-color: #52b788;
-            color: black;
+            background-color: #83c5be;
+            border-radius: 5px;
         }
 
         .topnav input[type="text"] {
-            float: right;
-            padding: 6px;
-            margin-top: 8px;
-            margin-right: 16px;
+            padding: 7px;
             border: none;
-            font-size: 16px;
+            border-radius: 3px;
+            margin-left: 20px;
         }
 
-        /* Container Styles */
+        /* Container and individual plant section */
         .container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-around;
+            max-width: 1200px;
+            margin: 20px auto;
             padding: 20px;
         }
 
-        /* Individual Plant Section */
         .individualPlant {
-            background-color: #ffffff;
+            background-color: #fff;
             border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            margin: 15px;
-            padding: 20px;
-            width: 300px;
-            transition: transform 0.2s;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 40px;
+            overflow: hidden;
+            transition: transform 0.3s ease-in-out;
         }
 
         .individualPlant:hover {
-            transform: scale(1.05);
+            transform: scale(1.02);
         }
 
-        .image {
-            display: flex;
-            justify-content: center;
-            margin-bottom: 20px;
+        .individualPlant img {
+            width: 100%;
+            height: auto;
+            border-bottom: 5px solid #006d77;
         }
 
-        .plant-img {
-            width: 100px;
-            height: 100px;
-            margin: 0 5px;
-            border-radius: 50%;
-            cursor: pointer;
-            transition: transform 0.2s;
+        .individualPlant h1 {
+            font-size: 28px;
+            color: #006d77;
+            text-align: center;
+            margin: 20px 0 10px;
         }
 
-        .plant-img:hover {
-            transform: scale(1.1);
-            border: 2px solid #52b788;
-        }
-
-        h1 {
-            color: #2d6a4f;
-            font-size: 24px;
-            margin-bottom: 10px;
-        }
-
-        h2 {
-            color: #40916c;
-            font-size: 20px;
-            margin-bottom: 10px;
-        }
-
-        p {
-            font-size: 14px;
+        .individualPlant p {
+            font-size: 16px;
             line-height: 1.6;
+            margin: 10px 20px;
         }
 
-        b {
-            color: #1b4332;
+        .individualPlant h2 {
+            font-size: 20px;
+            color: #006d77;
+            margin: 20px;
         }
 
-        /* Modal Styles */
+        /* Scrollable Section */
+        .container {
+            overflow-y: scroll;
+            height: 90vh;
+            padding-right: 10px;
+            scrollbar-width: thin;
+            scrollbar-color: #83c5be #f0f4f7;
+        }
+
+        .container::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        .container::-webkit-scrollbar-thumb {
+            background-color: #83c5be;
+            border-radius: 10px;
+        }
+
+        .container::-webkit-scrollbar-track {
+            background: #f0f4f7;
+        }
+
+        /* Modal Styling */
         .modal {
             display: none;
             position: fixed;
-            z-index: 1000;
+            z-index: 999;
             padding-top: 60px;
             left: 0;
             top: 0;
@@ -124,111 +126,95 @@
         }
 
         .modal-content {
-            margin: auto;
             display: block;
-            width: 80%;
-            max-width: 700px;
-        }
-
-        .modal-content, .caption {
-            animation-name: zoom;
-            animation-duration: 0.6s;
-        }
-
-        @keyframes zoom {
-            from {transform: scale(0)} 
-            to {transform: scale(1)}
+            margin: auto;
+            max-width: 80%;
+            border-radius: 10px;
         }
 
         .close {
             position: absolute;
-            top: 15px;
+            top: 20px;
             right: 35px;
-            color: #f1f1f1;
+            color: #fff;
             font-size: 40px;
             font-weight: bold;
             transition: 0.3s;
         }
 
-        .close:hover,
-        .close:focus {
-            color: #bbb;
-            text-decoration: none;
+        .close:hover, .close:focus {
+            color: #83c5be;
             cursor: pointer;
         }
 
         #caption {
+            margin: auto;
+            display: block;
             text-align: center;
-            color: #ccc;
+            color: #fff;
             padding: 10px 0;
-            height: 150px;
+            font-size: 20px;
         }
 
-        @media only screen and (max-width: 700px){
-            .modal-content {
-                width: 100%;
+        @media (max-width: 768px) {
+            .individualPlant h1 {
+                font-size: 22px;
+            }
+
+            .individualPlant h2 {
+                font-size: 18px;
             }
         }
     </style>
 </head>
 <body>
-    <!-- Navigation Bar -->
+
     <div class="topnav">
-        <a class="active" href="#home">Home</a>
-        <a href="#about">About</a>
-        <a href="#contact">Contact</a>
-        <input type="text" placeholder="Search">
+        <div>
+            <a class="active" href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+        </div>
+        <input type="text" placeholder="Search...">
     </div>
 
-    <!-- Main Container -->
     <div class="container">
         <!-- Aegle Marmelos Section -->
         <div class="individualPlant">
-            <div class="image">
-                <img src="aegleMarmelos.jpg" alt="Aegle Marmelos" onclick="openModal(this)" class="plant-img">
-                <img src="aegleMarmelos2.jpg" alt="Aegle Marmelos Close Up" onclick="openModal(this)" class="plant-img">
-            </div>
+            <img src="aegleMarmelos.jpg" alt="Aegle Marmelos" onclick="openModal(this)">
             <h1><u>Aegle Marmelos</u></h1>
             <p><b>Scientific Name:</b> Aegle marmelos</p>
             <p><b>Common Names:</b> Bael, Bengal Quince, Holy Fruit</p>
             <p><b>Native Region:</b> India, Sri Lanka, and parts of Southeast Asia.</p>
-            <p>Aegle marmelos, commonly known as bael, is a tropical and subtropical fruit-bearing tree...</p>
+            <p>Aegle marmelos, commonly known as bael, is a tropical and subtropical fruit-bearing tree known for...</p>
             <h2>Uses in AYUSH:</h2>
             <p><b>• Digestive Health</b></p>
             <p><b>• Respiratory Health</b></p>
             <p><b>• Immune Support</b></p>
             <h2>Advantages:</h2>
             <p><b>• Digestive Benefits:</b> Effective in managing digestive issues...</p>
-            <h2>Disadvantages and Side Effects:</h2>
-            <p><b>• Gastrointestinal Irritation:</b> In some individuals, excessive consumption...</p>
         </div>
 
         <!-- Aloe Vera Section -->
         <div class="individualPlant">
-            <div class="image">
-                <img src="aloeVera1.jpg" alt="Aloe Vera" onclick="openModal(this)" class="plant-img">
-                <img src="aloeVera2.jpg" alt="Aloe Vera Close Up" onclick="openModal(this)" class="plant-img">
-            </div>
+            <img src="aloeVera1.jpg" alt="Aloe Vera" onclick="openModal(this)">
             <h1><u>Aloe Vera</u></h1>
-            <p>Aloe Vera is a medicinal plant that grows in hot climates...</p>
-            <h2>Aloe Vera Benefits</h2>
-            <p>Aloe vera comes as a gel that you can apply to your skin...</p>
-            <h2>Aloe Vera Risks</h2>
-            <p>Talk to your doctor before using aloe vera...</p>
+            <p>Aloe Vera is a medicinal plant that grows in hot climates and is known for its soothing properties...</p>
+            <h2>Benefits:</h2>
+            <p>Aloe vera comes as a gel that you can apply to your skin to soothe burns and minor injuries...</p>
+            <h2>Risks:</h2>
+            <p>Talk to your doctor before using aloe vera in high quantities...</p>
         </div>
 
         <!-- Ashwagandha Section -->
         <div class="individualPlant">
-            <div class="image">
-                <img src="ashwagandhaPlant1.jpg" alt="Ashwagandha Plant" onclick="openModal(this)" class="plant-img">
-                <img src="ashwagandhaPlant2.jpg" alt="Ashwagandha Close Up" onclick="openModal(this)" class="plant-img">
-            </div>
-            <h1><u>Ashwagandha Plant</u></h1>
+            <img src="ashwagandhaPlant1.jpg" alt="Ashwagandha" onclick="openModal(this)">
+            <h1><u>Ashwagandha</u></h1>
             <p><b>Scientific Name:</b> Withania somnifera</p>
             <p>Ashwagandha is a prominent herb in Ayurvedic medicine known for its adaptogenic properties...</p>
             <h2>Uses in AYUSH:</h2>
             <p><b>• Stress and Anxiety</b></p>
-            <h2>Advantages</h2>
+            <h2>Advantages:</h2>
             <p><b>Adaptogenic Effects:</b> Helps the body adapt to stress...</p>
         </div>
     </div>
@@ -256,6 +242,6 @@
             modal.style.display = "none";
         }
     </script>
+
 </body>
 </html>
-
