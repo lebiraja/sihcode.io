@@ -51,7 +51,7 @@ body {
   font-size: 17px;
 }
 
-/* Background and Main Content Styling */
+/* Container and Content Styling */
 .container {
   max-width: 1200px;
   margin: auto;
@@ -67,10 +67,11 @@ body {
   to { opacity: 1; }
 }
 
+/* Heading */
 h1 {
   text-align: center;
   color: #2E8B57; /* Earthy green */
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* Slight shadow effect */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
   font-size: 36px;
 }
 
@@ -84,7 +85,7 @@ h1 {
 }
 
 .imageText img {
-  width: 150px; /* Adjusted size for smaller, attractive icons */
+  width: 150px;
   height: 150px;
   object-fit: cover;
   box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5);
@@ -100,8 +101,8 @@ h1 {
 }
 
 .imageText img:hover {
-  transform: scale(1.1); /* Smooth zoom on hover */
-  box-shadow: 10px 10px 25px rgba(0, 0, 0, 0.6); /* Enhance shadow on hover */
+  transform: scale(1.1);
+  box-shadow: 10px 10px 25px rgba(0, 0, 0, 0.6);
 }
 
 .imageText p {
@@ -109,25 +110,12 @@ h1 {
   font-family: 'Cambria', serif;
   font-size: 22px;
   font-weight: bold;
-  color: #556B2F; /* Olive Drab */
+  color: #556B2F;
   transition: color 0.3s ease;
 }
 
 .imageText p:hover {
-  color: #2E8B57; /* Change text color on hover */
-}
-
-/* Add images for each section with specific IDs */
-.imageText .medicine-remedies img {
-  content: url('design1.jpg'); /* Add the image for medicine remedies */
-}
-
-.imageText .products img {
-  content: url('design2.jpg'); /* Add the image for products */
-}
-
-.imageText .spline img {
-  content: url('3Dicon.jpg'); /* Add the image for 3D sample */
+  color: #2E8B57;
 }
 
 /* 3D link section styling */
@@ -154,7 +142,7 @@ h1 {
 
 .threeD-link img:hover {
   transform: scale(1.2);
-  filter: brightness(120%); /* Brighten on hover */
+  filter: brightness(120%);
 }
 
 .threeD-link p {
@@ -174,7 +162,7 @@ h1 {
   overflow: hidden;
   transition: transform 0.3s ease-in-out;
   animation: slideIn 1s ease forwards;
-  transform: translateX(100%); /* Initial position outside view */
+  transform: translateX(100%);
 }
 
 @keyframes slideIn {
@@ -183,7 +171,7 @@ h1 {
 }
 
 .spline-container:hover {
-  transform: scale(1.02); /* Slight zoom on hover */
+  transform: scale(1.02);
 }
 
 /* Back Button Styling */
@@ -202,7 +190,7 @@ h1 {
 
 .back-button:hover {
   background-color: #228B22;
-  transform: scale(1.05); /* Slight increase on hover */
+  transform: scale(1.05);
 }
 
 /* Responsive Design */
@@ -211,73 +199,65 @@ h1 {
     float: none;
     display: block;
     text-align: left;
-    width: 100%;
-    margin: 0;
-    padding: 14px;
+    padding: 10px;
+  }
+
+  .container {
+    padding: 10px;
   }
 
   .images {
     flex-direction: column;
   }
 
-  .spline-container {
-    width: 100%;
-    height: 50vh;
+  .imageText img {
+    width: 100px;
+    height: 100px;
   }
 }
 
-/* Modal Styles */
+/* Modal Styling for Full-size Image */
 .modal {
-  display: none; /* Hidden by default */
+  display: none;
   position: fixed;
-  z-index: 100; /* Stay on top */
+  z-index: 100;
   left: 0;
   top: 0;
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
-  background-color: rgba(0, 0, 0, 0.9); /* Black background with transparency */
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
 }
 
-/* Modal Image */
 .modal-content {
   margin: auto;
   display: block;
   width: 80%;
   max-width: 700px;
-  transition: 0.3s ease;
+  animation: zoomInModal 0.5s ease-in-out;
 }
 
-#caption {
-  margin: auto;
-  display: block;
-  text-align: center;
-  color: #fff;
-  padding: 10px 0;
-  height: 30px;
-}
-
-/* Close button */
-.close {
-  position: absolute;
-  top: 20px;
-  right: 35px;
-  color: #fff;
-  font-size: 40px;
-  font-weight: bold;
-  cursor: pointer;
-}
-
-.close:hover, .close:focus {
-  color: #bbb;
-}
-
-/* Modal Image Animation */
-.modal-content {
-  animation: zoom 0.6s;
-}
-
-@keyframes zoom {
+@keyframes zoomInModal {
   from { transform: scale(0); }
   to { transform: scale(1); }
 }
 
+.close {
+  position: absolute;
+  top: 20px;
+  right: 35px;
+  color: white;
+  font-size: 40px;
+  font-weight: bold;
+}
+
+.close:hover, .close:focus {
+  color: #bbb;
+  cursor: pointer;
+}
+
+#caption {
+  text-align: center;
+  color: white;
+  padding: 10px 0;
+  font-size: 20px;
+}
