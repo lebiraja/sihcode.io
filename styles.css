@@ -1,6 +1,6 @@
 /* Nature-inspired color scheme */
 body {
-  background-image: url('nature-background.jpg'); /* Replace with a nature-themed image */
+  background-image: url('Design.jpg'); /* Replace with a nature-themed image */
   background-size: cover;
   background-position: center;
   margin: 0;
@@ -74,7 +74,7 @@ h1 {
   font-size: 36px;
 }
 
-/* Image container and animation */
+/* Image containers and text */
 .images {
   display: flex;
   justify-content: space-evenly;
@@ -84,8 +84,9 @@ h1 {
 }
 
 .imageText img {
-  width: 350px;
-  height: 350px;
+  width: 150px; /* Adjusted size for smaller, attractive icons */
+  height: 150px;
+  object-fit: cover;
   box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5);
   border: 5px solid #fff;
   border-radius: 20px;
@@ -114,6 +115,19 @@ h1 {
 
 .imageText p:hover {
   color: #2E8B57; /* Change text color on hover */
+}
+
+/* Add images for each section with specific IDs */
+.imageText .medicine-remedies img {
+  content: url('design1.jpg'); /* Add the image for medicine remedies */
+}
+
+.imageText .products img {
+  content: url('design2.jpg'); /* Add the image for products */
+}
+
+.imageText .spline img {
+  content: url('3Dicon.jpg'); /* Add the image for 3D sample */
 }
 
 /* 3D link section styling */
@@ -211,3 +225,59 @@ h1 {
     height: 50vh;
   }
 }
+
+/* Modal Styles */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed;
+  z-index: 100; /* Stay on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  background-color: rgba(0, 0, 0, 0.9); /* Black background with transparency */
+}
+
+/* Modal Image */
+.modal-content {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+  transition: 0.3s ease;
+}
+
+#caption {
+  margin: auto;
+  display: block;
+  text-align: center;
+  color: #fff;
+  padding: 10px 0;
+  height: 30px;
+}
+
+/* Close button */
+.close {
+  position: absolute;
+  top: 20px;
+  right: 35px;
+  color: #fff;
+  font-size: 40px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.close:hover, .close:focus {
+  color: #bbb;
+}
+
+/* Modal Image Animation */
+.modal-content {
+  animation: zoom 0.6s;
+}
+
+@keyframes zoom {
+  from { transform: scale(0); }
+  to { transform: scale(1); }
+}
+
