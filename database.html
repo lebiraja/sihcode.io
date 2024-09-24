@@ -5,8 +5,174 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="database.css">
     <title>Medicinal Plants Database</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f8ff;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+
+        /* Top Navigation Bar */
+        .topnav {
+            background-color: #2d6a4f;
+            overflow: hidden;
+            padding: 15px;
+        }
+
+        .topnav a {
+            float: left;
+            color: #f4f4f4;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 17px;
+        }
+
+        .topnav a:hover {
+            background-color: #52b788;
+            color: black;
+        }
+
+        .topnav input[type="text"] {
+            float: right;
+            padding: 6px;
+            margin-top: 8px;
+            margin-right: 16px;
+            border: none;
+            font-size: 16px;
+        }
+
+        /* Container Styles */
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            padding: 20px;
+        }
+
+        /* Individual Plant Section */
+        .individualPlant {
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin: 15px;
+            padding: 20px;
+            width: 300px;
+            transition: transform 0.2s;
+        }
+
+        .individualPlant:hover {
+            transform: scale(1.05);
+        }
+
+        .image {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .plant-img {
+            width: 100px;
+            height: 100px;
+            margin: 0 5px;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+
+        .plant-img:hover {
+            transform: scale(1.1);
+            border: 2px solid #52b788;
+        }
+
+        h1 {
+            color: #2d6a4f;
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        h2 {
+            color: #40916c;
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+        p {
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        b {
+            color: #1b4332;
+        }
+
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            padding-top: 60px;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+
+        .modal-content {
+            margin: auto;
+            display: block;
+            width: 80%;
+            max-width: 700px;
+        }
+
+        .modal-content, .caption {
+            animation-name: zoom;
+            animation-duration: 0.6s;
+        }
+
+        @keyframes zoom {
+            from {transform: scale(0)} 
+            to {transform: scale(1)}
+        }
+
+        .close {
+            position: absolute;
+            top: 15px;
+            right: 35px;
+            color: #f1f1f1;
+            font-size: 40px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: #bbb;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        #caption {
+            text-align: center;
+            color: #ccc;
+            padding: 10px 0;
+            height: 150px;
+        }
+
+        @media only screen and (max-width: 700px){
+            .modal-content {
+                width: 100%;
+            }
+        }
+    </style>
 </head>
 <body>
+    <!-- Navigation Bar -->
     <div class="topnav">
         <a class="active" href="#home">Home</a>
         <a href="#about">About</a>
@@ -14,8 +180,9 @@
         <input type="text" placeholder="Search">
     </div>
 
+    <!-- Main Container -->
     <div class="container">
-        <!-- Individual Plant Section -->
+        <!-- Aegle Marmelos Section -->
         <div class="individualPlant">
             <div class="image">
                 <img src="aegleMarmelos.jpg" alt="Aegle Marmelos" onclick="openModal(this)" class="plant-img">
@@ -36,7 +203,7 @@
             <p><b>• Gastrointestinal Irritation:</b> In some individuals, excessive consumption...</p>
         </div>
 
-        <!-- Repeat for other plants -->
+        <!-- Aloe Vera Section -->
         <div class="individualPlant">
             <div class="image">
                 <img src="aloeVera1.jpg" alt="Aloe Vera" onclick="openModal(this)" class="plant-img">
@@ -50,6 +217,7 @@
             <p>Talk to your doctor before using aloe vera...</p>
         </div>
 
+        <!-- Ashwagandha Section -->
         <div class="individualPlant">
             <div class="image">
                 <img src="ashwagandhaPlant1.jpg" alt="Ashwagandha Plant" onclick="openModal(this)" class="plant-img">
@@ -90,3 +258,4 @@
     </script>
 </body>
 </html>
+
