@@ -183,61 +183,105 @@
     .spline-container {
       position: relative;
       width: 80%;
-      height: 500px;
-      margin: 0 auto;
-    }
-    
-    .spline-container iframe {
-      width: 100%;
-      height: 100%;
-      border: none;
-      border-radius: 15px;
+      height: 70vh;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+      border-radius: 20px;
+      overflow: hidden;
+      transition: transform 0.3s ease-in-out;
     }
 
-    .spline-text {
+    .spline-container:hover {
+      transform: scale(1.02); /* Slight zoom on hover */
+    }
+
+    spline-viewer {
+      width: 100%;
+      height: 100%;
+    }
+
+    /* Button styling for going back or viewing other plants */
+    .back-button {
       position: absolute;
-      top: 10px;
-      left: 10px;
-      background-color: rgba(255, 255, 255, 0.7);
-      padding: 10px;
-      border-radius: 10px;
+      top: 20px;
+      left: 20px;
+      background-color: #2E8B57;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+    }
+
+    .back-button:hover {
+      background-color: #228B22;
     }
   </style>
 </head>
 <body>
 
-<div class="topnav">
-  <a href="#home" class="active">Home</a>
-  <a href="#about">About</a>
-  <a href="#gallery">Gallery</a>
-  <input type="text" placeholder="Search...">
-</div>
-
-<div class="bg">
-  <h1>Welcome to the Virtual Ayush Garden & 3D Models</h1>
-</div>
-
-<div class="images">
-  <div class="imageText">
-    <img src="plant1.jpg" alt="Plant Image">
-    <p>Ayurvedic Plant 1</p>
+  <!-- Top Navigation Bar -->
+  <div class="topnav">
+    <a class="active" href="index_.html">Home</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
+    <input type="text" placeholder="Search">
   </div>
-  <div class="imageText">
-    <img src="plant2.jpg" alt="Plant Image">
-    <p>Ayurvedic Plant 2</p>
+
+  <!-- Main Content -->
+  <div class="container bg">
+    <h1><u>VIRTUAL AYUSH GARDEN: A JOURNEY THROUGH MEDICINAL PLANTS</u></h1>
+
+    <!-- Image Section -->
+    <div class="images">
+         <img src="desing2.jpg" alt="medicine remedies">
+        <a href="database.html"></a>
+        <p>Medicine Remedies</p>
+      </div>
+
+      <div class="imageText">
+        <img src="design1.jpg" alt="product">
+        <p>Products</p>
+      </div>  
+    </div>
+
+    <!-- 3D Sample Link Section -->
+    <div class="threeD-link">
+      <a href="3dindex.html">
+        <img src="3Dicon.png" alt="3D Sample">
+      </a>
+      <p>Click here to view the 3D sample</p>
+    </div>
   </div>
-</div>
 
-<div class="threeD-link">
-  <img src="3D-icon.png" alt="3D Icon">
-  <p>Explore the 3D Models</p>
-</div>
+  <!-- Monstera 3D Model Section -->
+  <div class="spline-container">
+    <spline-viewer url="https://prod.spline.design/3DMonstera-url/scene.splinecode"></spline-viewer>
+  </div>
 
-<!-- Monstera 3D Model Section -->
-<div class="spline-container">
-  <iframe src="https://my.spline.design/monstera3dmodel"></iframe>
-  <div class="spline-text">Monstera Plant 3D Model</div>
-</div>
+  <a class="back-button" href="index_.html">Back to Garden</a>
 
-</body>
-</html>
+  <script src="https://widget.cxgenie.ai/widget.js" data-aid="16030be2-8a8a-4531-9b27-9567baa24781" data-lang="en"></script>
+
+  <div class="black-space">
+    <!-- Main Section (Black Space with Image Gallery) -->
+    <div class="main-section">
+      <div class="image-gallery">
+        <!-- Add images that will open in the modal -->
+        <img src="design1.jpg" alt="Image 1" class="gallery-image" onclick="openModal(this)">
+        <img src="design2.jpg" alt="Image 2" class="gallery-image" onclick="openModal(this)">
+        <img src="chatbot.jpg" alt="Image 3" class="gallery-image" onclick="openModal(this)">
+      </div>
+    </div>
+  
+    <!-- Modal to display full-size image -->
+    <div id="imageModal" class="modal">
+      <span class="close" onclick="closeModal()">&times;</span>
+      <img class="modal-content" id="modalImage">
+      <div id="caption"></div>
+    </div>
+  </div>
+  
+
+</body>                                                                                                                                                                                                                                                                                                              
+</html>  
