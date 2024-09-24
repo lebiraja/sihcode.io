@@ -22,6 +22,9 @@
             justify-content: space-between;
             align-items: center;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            position: sticky; /* Sticky navigation */
+            top: 0;
+            z-index: 1000; /* Ensure it's on top */
         }
 
         .topnav a {
@@ -70,7 +73,7 @@
         .individualPlant {
             background-color: #fff;
             border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
             margin-bottom: 40px;
             overflow: hidden;
             padding: 20px;
@@ -91,11 +94,11 @@
             display: block;
             margin: 20px auto;
             border: 5px solid #95d5b2; /* Light green border */
-            transition: transform 0.3s ease-in-out;
+            transition: transform 0.5s ease;
         }
 
         .individualPlant img:hover {
-            transform: rotate(360deg);
+            transform: rotate(360deg) scale(1.1); /* Rotate and scale */
         }
 
         .individualPlant h1 {
@@ -142,6 +145,16 @@
             height: 100%;
             overflow: auto;
             background-color: rgba(0, 0, 0, 0.8);
+            animation: fadeIn 0.5s ease; /* Fade in for modal */
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
         }
 
         .modal-content {
@@ -168,7 +181,7 @@
             color: #fff;
             font-size: 40px;
             font-weight: bold;
-            transition: 0.3s;
+            transition: color 0.3s;
         }
 
         .close:hover, .close:focus {
@@ -245,8 +258,7 @@
             <p><b>• Improves Sleep</b></p>
             <p><b>• Boosts Energy</b></p>
         </div>
-    </div>
-
+    </div> 
     <!-- Modal for Image Viewing -->
     <div id="imageModal" class="modal">
         <span class="close" onclick="closeModal()">&times;</span>
