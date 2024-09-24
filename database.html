@@ -8,7 +8,7 @@
         /* General Styling */
         body {
             font-family: 'Arial', sans-serif;
-            background-color: #e0f7df; /* Natural green background */
+            background-color: #d8f3dc; /* Light greenish background */
             color: #333;
             margin: 0;
             padding: 0;
@@ -21,6 +21,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
 
         .topnav a {
@@ -29,12 +30,13 @@
             padding: 14px 16px;
             text-align: center;
             font-size: 16px;
-            transition: background-color 0.3s;
+            transition: background-color 0.3s, transform 0.3s;
         }
 
         .topnav a:hover {
             background-color: #95d5b2;
             border-radius: 5px;
+            transform: scale(1.1);
         }
 
         .topnav input[type="text"] {
@@ -42,6 +44,7 @@
             border: none;
             border-radius: 3px;
             margin-left: 20px;
+            background-color: #95d5b2;
         }
 
         /* Container and individual plant section */
@@ -49,6 +52,19 @@
             max-width: 1200px;
             margin: 20px auto;
             padding: 20px;
+            overflow-y: auto;
+            height: 90vh;
+            scrollbar-width: thin;
+            scrollbar-color: #95d5b2 #d8f3dc;
+        }
+
+        .container::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        .container::-webkit-scrollbar-thumb {
+            background-color: #95d5b2;
+            border-radius: 10px;
         }
 
         .individualPlant {
@@ -57,11 +73,14 @@
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
             margin-bottom: 40px;
             overflow: hidden;
-            transition: transform 0.3s ease-in-out;
+            padding: 20px;
+            transition: transform 0.3s ease-in-out, background-color 0.3s;
+            animation: fadeInUp 0.5s ease-in;
         }
 
         .individualPlant:hover {
-            transform: scale(1.02);
+            transform: scale(1.05);
+            background-color: #e9ffe5;
         }
 
         .individualPlant img {
@@ -72,6 +91,11 @@
             display: block;
             margin: 20px auto;
             border: 5px solid #95d5b2; /* Light green border */
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .individualPlant img:hover {
+            transform: rotate(360deg);
         }
 
         .individualPlant h1 {
@@ -85,6 +109,7 @@
             font-size: 16px;
             line-height: 1.6;
             margin: 10px 20px;
+            color: #333;
         }
 
         .individualPlant h2 {
@@ -93,26 +118,16 @@
             margin: 20px;
         }
 
-        /* Scrollable Section */
-        .container {
-            overflow-y: scroll;
-            height: 90vh;
-            padding-right: 10px;
-            scrollbar-width: thin;
-            scrollbar-color: #95d5b2 #e0f7df;
-        }
-
-        .container::-webkit-scrollbar {
-            width: 8px;
-        }
-
-        .container::-webkit-scrollbar-thumb {
-            background-color: #95d5b2;
-            border-radius: 10px;
-        }
-
-        .container::-webkit-scrollbar-track {
-            background: #e0f7df;
+        /* Keyframes for Animation */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         /* Modal Styling */
@@ -134,6 +149,16 @@
             margin: auto;
             max-width: 80%;
             border-radius: 10px;
+            animation: zoomIn 0.3s ease;
+        }
+
+        @keyframes zoomIn {
+            from {
+                transform: scale(0.7);
+            }
+            to {
+                transform: scale(1);
+            }
         }
 
         .close {
@@ -173,6 +198,15 @@
 </head>
 <body>
 
+    <!-- Navigation Bar -->
+    <div class="topnav">
+        <a href="#home">Home</a>
+        <a href="#plants">Medicinal Plants</a>
+        <a href="#contact">Contact</a>
+        <input type="text" placeholder="Search for plants...">
+    </div>
+
+    <!-- Main Content -->
     <div class="container">
         <!-- Aegle Marmelos Section -->
         <div class="individualPlant">
@@ -181,20 +215,23 @@
             <p><b>Scientific Name:</b> Aegle marmelos</p>
             <p><b>Common Names:</b> Bael, Bengal Quince, Holy Fruit</p>
             <p><b>Native Region:</b> India, Sri Lanka, and parts of Southeast Asia.</p>
-            <p>Aegle marmelos, commonly known as bael, is a tropical and subtropical fruit-bearing tree known for...</p>
-            <h2>Uses in AYUSH:</h2>
+            <p>Aegle marmelos is a tropical tree that offers several health benefits...</p>
+            <h2>Medicinal Uses:</h2>
             <p><b>• Digestive Health</b></p>
             <p><b>• Respiratory Health</b></p>
-            <p><b>• Immune Support</b></p>
+            <p><b>• Immune System Support</b></p>
         </div>
 
         <!-- Aloe Vera Section -->
         <div class="individualPlant">
             <img src="IMG-20240924-WA0010.jpg" alt="Aloe Vera" onclick="openModal(this)">
             <h1><u>Aloe Vera</u></h1>
-            <p>Aloe Vera is a medicinal plant that grows in hot climates and is known for its soothing properties...</p>
-            <h2>Benefits:</h2>
-            <p>Aloe vera comes as a gel that you can apply to your skin to soothe burns and minor injuries...</p>
+            <p><b>Scientific Name:</b> Aloe barbadensis miller</p>
+            <p>Aloe Vera, known for its healing properties, is beneficial for the skin, digestive system, and more.</p>
+            <h2>Medicinal Benefits:</h2>
+            <p><b>• Skin Soothing</b></p>
+            <p><b>• Anti-inflammatory</b></p>
+            <p><b>• Wound Healing</b></p>
         </div>
 
         <!-- Ashwagandha Section -->
@@ -202,9 +239,11 @@
             <img src="IMG-20240924-WA0011.jpg" alt="Ashwagandha" onclick="openModal(this)">
             <h1><u>Ashwagandha</u></h1>
             <p><b>Scientific Name:</b> Withania somnifera</p>
-            <p>Ashwagandha is a prominent herb in Ayurvedic medicine known for its adaptogenic properties...</p>
-            <h2>Uses in AYUSH:</h2>
-            <p><b>• Stress and Anxiety</b></p>
+            <p>Ashwagandha is a key herb in Ayurvedic medicine, recognized for its stress-relief and adaptogenic properties.</p>
+            <h2>Medicinal Benefits:</h2>
+            <p><b>• Stress Reduction</b></p>
+            <p><b>• Improves Sleep</b></p>
+            <p><b>• Boosts Energy</b></p>
         </div>
     </div>
 
