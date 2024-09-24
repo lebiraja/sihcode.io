@@ -188,6 +188,7 @@
       border-radius: 20px;
       overflow: hidden;
       transition: transform 0.3s ease-in-out;
+      margin: 20px auto;
     }
 
     .spline-container:hover {
@@ -216,6 +217,43 @@
     .back-button:hover {
       background-color: #228B22;
     }
+
+    /* Modal styling */
+    .modal {
+      display: none; 
+      position: fixed;
+      z-index: 1; 
+      left: 0;
+      top: 0;
+      width: 100%; 
+      height: 100%; 
+      overflow: auto; 
+      background-color: rgba(0, 0, 0, 0.9); 
+    }
+
+    .modal-content {
+      display: block;
+      margin: 15% auto;
+      max-width: 80%;
+      border-radius: 10px;
+    }
+
+    .close {
+      position: absolute;
+      top: 15px;
+      right: 35px;
+      color: white;
+      font-size: 40px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .gallery-image {
+      width: 200px;
+      height: 200px;
+      margin: 10px;
+      cursor: pointer;
+    }
   </style>
 </head>
 <body>
@@ -234,7 +272,8 @@
 
     <!-- Image Section -->
     <div class="images">
-         <img src="desing2.jpg" alt="medicine remedies">
+      <div class="imageText">
+        <img src="desing2.jpg" alt="medicine remedies">
         <a href="database.html"></a>
         <p>Medicine Remedies</p>
       </div>
@@ -263,8 +302,8 @@
 
   <script src="https://widget.cxgenie.ai/widget.js" data-aid="16030be2-8a8a-4531-9b27-9567baa24781" data-lang="en"></script>
 
+  <!-- Black Space and Image Gallery -->
   <div class="black-space">
-    <!-- Main Section (Black Space with Image Gallery) -->
     <div class="main-section">
       <div class="image-gallery">
         <!-- Add images that will open in the modal -->
@@ -273,7 +312,7 @@
         <img src="chatbot.jpg" alt="Image 3" class="gallery-image" onclick="openModal(this)">
       </div>
     </div>
-  
+
     <!-- Modal to display full-size image -->
     <div id="imageModal" class="modal">
       <span class="close" onclick="closeModal()">&times;</span>
@@ -281,7 +320,25 @@
       <div id="caption"></div>
     </div>
   </div>
-  
 
-</body>                                                                                                                                                                                                                                                                                                              
-</html>  
+  <!-- JavaScript for Modal functionality -->
+  <script>
+    function openModal(image) {
+      var modal = document.getElementById("imageModal");
+      var modalImg = document.getElementById("modalImage");
+      var captionText = document.getElementById("caption");
+      
+      modal.style.display = "block";
+      modalImg.src = image.src;
+      captionText.innerHTML = image.alt;
+    }
+
+    function closeModal() {
+      var modal = document.getElementById("imageModal");
+      modal.style.display = "none";
+    }
+  </script>
+
+</body>
+</html>
+
