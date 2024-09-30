@@ -458,3 +458,56 @@ img {
         font-size: 16px;
     }
 }
+/* Style the chat box icon */
+.chatbox-icon {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  width: 50px;
+  height: 50px;
+  background-color: #fff;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.chatbox-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+/* Style the chat box container */
+#chatbox-container {
+  display: none;
+  position: fixed;
+  bottom: 60px;
+  right: 60px;
+  width: 300px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+#chatbox-container.visible {
+  display: block;
+}
+
+#chatbox-messages {
+  padding: 20px;
+}
+
+#ai-explanation-container {
+  padding: 20px;
+}
+
+#ai-explanation-form {
+  padding: 20px;
+}
+
+#ai-explanation-response {
+  padding: 20px;
+}
