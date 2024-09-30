@@ -1,9 +1,4 @@
 /* Reset & Basic Styling */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
 
 body {
     font-family: 'Roboto', sans-serif;
@@ -24,6 +19,7 @@ img {
 }
 
 /* Navigation Bar */
+
 .navbar {
     position: fixed;
     top: 0;
@@ -82,6 +78,7 @@ img {
 }
 
 /* Hamburger Menu */
+
 .hamburger {
     display: none;
     flex-direction: column;
@@ -97,6 +94,7 @@ img {
 }
 
 /* Hero Section */
+
 .hero {
     height: 100vh;
     background: url('https://source.unsplash.com/1600x900/?nature,forest') no-repeat center center/cover;
@@ -137,7 +135,7 @@ img {
 .hero-content p {
     font-size: 20px;
     margin-bottom: 30px;
-    animation: slideInUp 1s ease-out;
+ animation: slideInUp 1s ease-out;
 }
 
 .hero-content a {
@@ -155,6 +153,7 @@ img {
 }
 
 /* About Section */
+
 .about {
     padding: 80px 20px;
     background: #f0fdf4;
@@ -184,6 +183,7 @@ img {
 }
 
 /* Gallery Section */
+
 .gallery {
     padding: 80px 20px;
     background: #fff;
@@ -255,6 +255,7 @@ img {
 }
 
 /* Lightbox Modal */
+
 .lightbox {
     display: none;
     position: fixed;
@@ -298,6 +299,7 @@ img {
 }
 
 /* 3D Model Section */
+
 .threeD-section {
     padding: 80px 20px;
     background: #f0fdf4;
@@ -308,7 +310,7 @@ img {
     font-family: 'Montserrat', sans-serif;
     font-size: 32px;
     margin-bottom: 40px;
-    color: #2d6a4f;
+    color: # 2d6a4f;
     opacity: 0;
     transform: translateY(50px);
     animation: fadeInUp 1s forwards;
@@ -333,6 +335,7 @@ img {
 }
 
 /* Contact Section */
+
 .contact {
     padding: 80px 20px;
     background: #fff;
@@ -384,6 +387,7 @@ img {
 }
 
 /* Footer */
+
 .footer {
     background: #2d6a4f;
     color: #fff;
@@ -404,6 +408,7 @@ img {
 }
 
 /* Animations */
+
 @keyframes fadeIn {
     from {opacity: 0;}
     to {opacity: 1;}
@@ -430,6 +435,7 @@ img {
 }
 
 /* Responsive Styles */
+
 @media (max-width: 768px) {
     .navbar ul {
         position: fixed;
@@ -457,29 +463,4 @@ img {
     .hero-content p {
         font-size: 16px;
     }
-}
-/* Style the chat box icon */
-.chatbox-icon {
-  position: fixed;
-  bottom: 0;
-  right: 0;
-  width: 50px;
-  height: 50px;
-  background-color: #fff;
-  border-radius: 50%;
-  cursor: pointer;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-}
-
-.chatbox-icon img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 50%;
-}
-
-
-
-#ai-explanation-response {
-  padding: 20px;
 }
