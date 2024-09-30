@@ -130,67 +130,6 @@
     </div>
 
     <!-- JavaScript for Interactive Features -->
-    <script>
-        // Hamburger Menu Toggle
-        const hamburger = document.getElementById('hamburger');
-        const navLinks = document.getElementById('nav-links');
-
-        hamburger.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-        });
-
-        // Sticky Navbar Background Change on Scroll
-        window.addEventListener('scroll', () => {
-            const navbar = document.getElementById('navbar');
-            if (window.scrollY > 50) {
-                navbar.classList.add('scrolled');
-            } else {
-                navbar.classList.remove('scrolled');
-            }
-        });
-
-        // Lightbox Functionality
-        const lightbox = document.getElementById('lightbox');
-        const closeLightbox = document.querySelector('.close-lightbox');
-        const lightboxImg = document.getElementById('lightbox-img');
-        const lightboxCaption = document.getElementById('lightbox-caption');
-
-        function openLightbox(src, alt) {
-            lightbox.style.display = 'block';
-            lightboxImg.src = src;
-            lightboxCaption.textContent = alt;
-        }
-
-        function closeLightbox() {
-            lightbox.style.display = 'none';
-        }
-
-        // Contact Form Submission
-        function submitForm(event) {
-            event.preventDefault();
-            const name = document.getElementById('name').value;
-            const email = document.getElementById('email').value;
-            const message = document.getElementById('message').value;
-
-            // Add your form submission logic here
-            console.log(name, email, message);
-        }
-    </script>
-    <!-- Secret signature -->
-<div id="my-secret-element" style="display: none;">Made by LEBI</div>
-<!-- Chat box container -->
-<script>
-  window.cxGenieSettings = {
-    position: 'top-right', // Position the chat box at the top right corner
-    theme: 'dark', // Set the chat box theme to dark
-    greeting: 'Hello, how can I assist you today?', // Set a custom greeting message
-    backgroundColor: '#333', // Set the background color of the chat box
-    textColor: '#fff', // Set the text color of the chat box
-    borderRadius: '10px', // Set the border radius of the chat box
-    boxShadow: '0 0 10px rgba(0, 0, 0, 0.2)' // Set the box shadow of the chat box
-  };
- </script>
-<script src="https://widget.cxgenie.ai/widget.js" data-aid="16030be2-8a8a-4531-9b27-9567baa24781" data-lang="en"></script>
-<script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
