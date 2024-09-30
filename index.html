@@ -178,14 +178,24 @@
     </script>
     <!-- Secret signature -->
 <div id="my-secret-element" style="display: none;">Made by LEBI</div>
-<div id="ai-explanation-container">
-  <h2>Get AI Explanation</h2>
-  <form id="ai-explanation-form">
-    <input type="hidden" name="contents" value='[{"parts":[{"text":""}]}]' />
-    <button id="ai-explanation-btn">Get Explanation</button>
-  </form>
-  <div id="ai-explanation-response"></div>
-</div>         
+<!-- Chat box icon in the right bottom corner -->
+<div class="chatbox-icon">
+  <img src="gemini-logo.png" alt="Gemini Logo">
+</div>
+
+<!-- Chat box container -->
+<div id="chatbox-container">
+  <h2>AI Chatbox</h2>
+  <div id="chatbox-messages">
+    <div id="ai-explanation-container">
+      <form id="ai-explanation-form">
+        <input type="text" id="user-input" placeholder="Ask me anything...">
+        <button id="ai-explanation-btn">Send</button>
+      </form>
+      <div id="ai-explanation-response"></div>
+    </div>
+  </div>
+</div> 
 <script src="script.js"></script>
 </body>
 </html>
