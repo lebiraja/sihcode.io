@@ -1,5 +1,3 @@
-// JavaScript code for interactive features
-
 // Hamburger Menu Toggle
 const hamburger = document.getElementById('hamburger');
 const navLinks = document.getElementById('nav-links');
@@ -45,12 +43,18 @@ function submitForm(event) {
     console.log(name, email, message);
 }
 
-// Add event listeners for lightbox
-document.querySelectorAll('.gallery-grid img').forEach((img) => {
-    img.addEventListener('click', () => {
-        openLightbox(img.src, img.alt);
-    });
-});
+// Search Functionality
+function filterPlants() {
+    const searchInput = document.getElementById('plant-search').value.toLowerCase();
+    const plants = document.querySelectorAll('.individualPlant');
 
-// Add event listener for contact form submission
-document.getElementById('contact-form').addEventListener('submit', submitForm);
+    plants.forEach((plant) => {
+        const plantName = plant.querySelector('h1').textContent.toLowerCase();
+
+        if (plantName.includes(searchInput)) {
+            plant.style.display = 'block';
+        } else {
+            plant.style.display = 'none';
+        }
+    });
+}
