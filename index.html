@@ -184,18 +184,18 @@
 </div>
 
 <!-- Chat box container -->
-<div id="chatbox-container">
-  <h2>AI Chatbox</h2>
-  <div id="chatbox-messages">
-    <div id="ai-explanation-container">
-      <form id="ai-explanation-form">
-        <input type="text" id="user-input" placeholder="Ask me anything...">
-        <button id="ai-explanation-btn">Send</button>
-      </form>
-      <div id="ai-explanation-response"></div>
-    </div>
-  </div>
-</div> 
+<script>
+  window.cxGenieSettings = {
+    position: 'top-right', // Position the chat box at the top right corner
+    theme: 'dark', // Set the chat box theme to dark
+    greeting: 'Hello, how can I assist you today?', // Set a custom greeting message
+    backgroundColor: '#333', // Set the background color of the chat box
+    textColor: '#fff', // Set the text color of the chat box
+    borderRadius: '10px', // Set the border radius of the chat box
+    boxShadow: '0 0 10px rgba(0, 0, 0, 0.2)' // Set the box shadow of the chat box
+  };
+ </script>
+<script src="https://widget.cxgenie.ai/widget.js" data-aid="16030be2-8a8a-4531-9b27-9567baa24781" data-lang="en"></script>
 <script src="script.js"></script>
 </body>
 </html>
